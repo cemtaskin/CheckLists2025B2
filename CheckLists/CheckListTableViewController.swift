@@ -46,11 +46,20 @@ class CheckListTableViewController: UITableViewController {
         print("cellForRowAt called - >indexPath :\(indexPath.row)" )
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListItem",for: indexPath)
-        
-        let label = cell.viewWithTag(1000) as? UILabel
-        let item = items[indexPath.row] // get data from data model with index
-        label!.text = item.text //update cell label text
+        configureText(for: cell, at: indexPath)
         return cell //returns cell
+    }
+    
+    func configureText (for cell : UITableViewCell, at indexPath : IndexPath){
+        
+        let labelText = cell.viewWithTag(1000) as? UILabel
+        let labelOrder = cell.viewWithTag(1001) as? UILabel
+        let labelLenght = cell.viewWithTag(1002) as? UILabel
+        
+        let item = items[indexPath.row] // get data from data model with index
+        labelText!.text = item.text //update cell label text
+        labelOrder?.text = "\(indexPath.row + 1)"
+        labelLenght?.text = "\(item.text.count)"
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,7 +71,8 @@ class CheckListTableViewController: UITableViewController {
             }else{
                 cell.accessoryType = .checkmark
             }
-            item.checked = !item.checked
+            
+            item.toggleCheck()
 
         }
         

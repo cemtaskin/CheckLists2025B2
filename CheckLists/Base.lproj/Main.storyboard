@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHI-h1-nOi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,20 +17,43 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CheckListItem" id="IGT-u1-f37">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IGT-u1-f37" id="7El-Gw-7kK">
-                                    <rect key="frame" x="0.0" y="0.0" width="349" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="349" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Do List Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udh-SM-AVd">
-                                            <rect key="frame" x="20" y="11" width="340" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udh-SM-AVd">
+                                            <rect key="frame" x="79" y="11" width="113.66666666666669" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-vA-fa1">
+                                            <rect key="frame" x="20" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri1-jz-3oz">
+                                            <rect key="frame" x="299" y="11" width="42" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Udh-SM-AVd" secondAttribute="bottom" id="3cy-t6-YTZ"/>
+                                        <constraint firstItem="ri1-jz-3oz" firstAttribute="top" secondItem="7El-Gw-7kK" secondAttribute="topMargin" id="82M-us-yVD"/>
+                                        <constraint firstItem="Udh-SM-AVd" firstAttribute="leading" secondItem="iPr-vA-fa1" secondAttribute="trailing" constant="17" id="V6u-Z0-DKC"/>
+                                        <constraint firstItem="Udh-SM-AVd" firstAttribute="top" secondItem="7El-Gw-7kK" secondAttribute="topMargin" id="a2R-2c-2Zx"/>
+                                        <constraint firstItem="Udh-SM-AVd" firstAttribute="leading" secondItem="iPr-vA-fa1" secondAttribute="trailing" constant="17" id="bw9-Ry-3VF"/>
+                                        <constraint firstItem="ri1-jz-3oz" firstAttribute="trailing" secondItem="7El-Gw-7kK" secondAttribute="trailingMargin" id="fQw-78-1sF"/>
+                                        <constraint firstItem="iPr-vA-fa1" firstAttribute="leading" secondItem="7El-Gw-7kK" secondAttribute="leadingMargin" id="l37-1C-csl"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ri1-jz-3oz" secondAttribute="bottom" id="mDi-AY-JpA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iPr-vA-fa1" secondAttribute="bottom" constant="0.67000000000000004" id="nO9-1x-xkp"/>
+                                        <constraint firstItem="iPr-vA-fa1" firstAttribute="top" secondItem="7El-Gw-7kK" secondAttribute="topMargin" id="rw9-I0-GcH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

@@ -8,4 +8,8 @@
 class CheckListItem{
     var text = ""
     var checked = true
+    
+    func toggleCheck(){
+        checked = !checked
+    }
 }
