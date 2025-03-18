@@ -66,7 +66,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="XqT-AB-35y">
                             <connections>
                                 <action selector="addItem" destination="gHI-h1-nOi" id="Lfs-RV-mmg"/>
-                                <segue destination="JdV-2B-dF6" kind="presentation" id="bYL-XA-SYX"/>
+                                <segue destination="JdV-2B-dF6" kind="presentation" identifier="AddItem" id="bYL-XA-SYX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -120,7 +120,7 @@
                                 <action selector="cancel" destination="J7l-bo-PWu" id="Ir0-Ff-5gI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="iLW-ou-bzG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="iLW-ou-bzG">
                             <connections>
                                 <action selector="done" destination="J7l-bo-PWu" id="9CZ-2g-JtV"/>
                             </connections>
@@ -128,6 +128,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnDone" destination="iLW-ou-bzG" id="HNf-6P-mrt"/>
+                        <outlet property="textField" destination="MYt-iC-chn" id="e9f-UU-TFc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLF-WD-UL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

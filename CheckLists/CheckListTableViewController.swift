@@ -7,7 +7,16 @@
 
 import UIKit
 
-class CheckListTableViewController: UITableViewController {
+class CheckListTableViewController: UITableViewController,AddNewItemViewControllerDelegate {
+    func addNewItemViewControllerDidCancel(_ controller: AddNewItemTableViewController) {
+        controller.dismiss(animated: true)
+    }
+    
+    func addNewItemViewController(_ controller: AddNewItemTableViewController, didFinishAdding item: CheckListItem) {
+        dismiss(animated: true)
+        print(item.text)
+    }
+    
     var items : [CheckListItem] //= [] //create an array (type of array is CheckListeItem)
    
     required init?(coder: NSCoder) {
@@ -27,6 +36,18 @@ class CheckListTableViewController: UITableViewController {
         items.append(item2)
         
         super.init(coder: coder)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddItem" {
+            let navigationController = segue.destination as! UINavigationController
+            
+            let controller = navigationController.topViewController as! AddNewItemTableViewController
+            
+            controller.delegate = self
+            
+        }
     }
     
     override func viewDidLoad() {
