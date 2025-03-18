@@ -78,5 +78,28 @@ class CheckListTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    @IBAction func addItem (){
+        var item = CheckListItem()
+        item.text = "New added row"
+        
+        let indexPath = IndexPath(row: items.count, section: 0)
+        let indexpaths = [indexPath]
+        items.append(item)
+        tableView.insertRows(at: indexpaths, with: .automatic)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        items.remove(at: indexPath.row)
+        
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+        
+    }
+    
+    
+    
+    
    
 }
