@@ -14,7 +14,7 @@ class CheckListTableViewController: UITableViewController,AddNewItemViewControll
     
     func addNewItemViewController(_ controller: AddNewItemTableViewController, didFinishAdding item: CheckListItem) {
         dismiss(animated: true)
-        print(item.text)
+        
     }
     
     var items : [CheckListItem] //= [] //create an array (type of array is CheckListeItem)
