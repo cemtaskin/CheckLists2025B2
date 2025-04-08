@@ -55,6 +55,9 @@
                                         <constraint firstItem="iPr-vA-fa1" firstAttribute="top" secondItem="7El-Gw-7kK" secondAttribute="topMargin" id="rw9-I0-GcH"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="JdV-2B-dF6" kind="presentation" identifier="EditItem" id="Qhq-bf-a1f"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -172,6 +175,9 @@
             <point key="canvasLocation" x="2377.8625954198474" y="-246.47887323943664"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qhq-bf-a1f"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

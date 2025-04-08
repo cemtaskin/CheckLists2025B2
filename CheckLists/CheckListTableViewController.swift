@@ -8,45 +8,64 @@
 import UIKit
 
 class CheckListTableViewController: UITableViewController,AddNewItemViewControllerDelegate {
+    
+    var items : [CheckListItem] = []
+    
     func addNewItemViewControllerDidCancel(_ controller: AddNewItemTableViewController) {
         controller.dismiss(animated: true)
     }
     
     func addNewItemViewController(_ controller: AddNewItemTableViewController, didFinishAdding item: CheckListItem) {
-        dismiss(animated: true)
+        
+        let newRowIndex = items.count //new index for new added item
+        
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with:.automatic)
+        
+        controller.dismiss(animated: true)
+        
         
     }
     
-    var items : [CheckListItem] //= [] //create an array (type of array is CheckListeItem)
-   
-    required init?(coder: NSCoder) {
+    func addNewItemViewController(_ controller: AddNewItemTableViewController, didFinishEditing item: CheckListItem) {
+    
         
-        items = []
+        controller.dismiss(animated: true)
         
-        var item0 = CheckListItem()
-        item0.text = "Brush your teeth"
-        items.append(item0)
         
-        var item1 = CheckListItem()
-        item1.text = "Walk the dog"
-        items.append(item1)
-        
-        var item2 = CheckListItem()
-        item2.text = "Learn iOS development"
-        items.append(item2)
-        
-        super.init(coder: coder)
     }
+    
+   
+   
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        print(sender)
         if segue.identifier == "AddItem" {
             let navigationController = segue.destination as! UINavigationController
             
             let controller = navigationController.topViewController as! AddNewItemTableViewController
-            
+        
             controller.delegate = self
             
+        }
+        
+        if segue.identifier == "EditItem"{
+            let navigationController = segue.destination as! UINavigationController
+            
+            let controller = navigationController.topViewController as! AddNewItemTableViewController
+        
+            controller.delegate = self
+            
+            if let indexPath =  tableView.indexPath(for: sender as! UITableViewCell){
+                controller.itemToEdit = items[indexPath.row]
+            }
+            
+           
         }
     }
     
